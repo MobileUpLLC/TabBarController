@@ -17,20 +17,18 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         
         window = UIWindow(windowScene: windowScene)
-//        let icons = [
-//            UIImage(systemName: "square.and.arrow.up")!,
-//            UIImage(systemName: "square.and.arrow.up.circle")!,
-//            UIImage(systemName: "square.and.arrow.up.trianglebadge.exclamationmark")!,
-//            UIImage(systemName: "square.and.arrow.down")!,
-//        ]
         
         let lhs = TableController()
         lhs.floatingTabBarItem = UIImage(systemName: "square.and.arrow.up")!
+        lhs.item = -1
+        let lhsNav = UINavigationController(rootViewController: lhs)
         
         let rhs = TableController()
         rhs.floatingTabBarItem = UIImage(systemName: "square.and.arrow.up.circle")!
+        rhs.item = -2
+        let rhsNav = UINavigationController(rootViewController: rhs)
         
-        window?.rootViewController = FloatingTabBarController(controllers: [lhs, rhs])
+        window?.rootViewController = FloatingTabBarController(controllers: [lhsNav, rhsNav])
         window?.makeKeyAndVisible()
     }
 

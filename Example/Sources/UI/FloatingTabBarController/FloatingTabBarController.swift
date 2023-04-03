@@ -9,7 +9,7 @@ import TabBarController
 import UIKit
 
 protocol FloatingTabBarItemProvider: UIViewController {
-    var floatingTabBarItem: UIImage { get }
+    var floatingTabBarItem: UIImage { get set }
 }
 
 class FloatingTabBarController: TabBarController {
@@ -17,7 +17,11 @@ class FloatingTabBarController: TabBarController {
         tabControllers
     }
     
-    private lazy var tabBarView: FloatingTabBarView = {
+    override var tabBarView: UIView {
+        floatingTabBarView
+    }
+    
+    private lazy var floatingTabBarView: FloatingTabBarView = {
         let icons = tabControllers.map { $0.floatingTabBarItem }
         let view = FloatingTabBarView(icons: icons)
         view.onItemSelect = { [weak self] index in
@@ -44,16 +48,33 @@ class FloatingTabBarController: TabBarController {
     override func selectedIndexDidChange() {
         super.selectedIndexDidChange()
         
-        tabBarView.selectedIndex = selectedIndex
+        floatingTabBarView.selectedIndex = selectedIndex
     }
 
     override func setupTabBarView() {
         super.setupTabBarView()
         
-        view.addSubview(tabBarView)
-        tabBarView.snp.makeConstraints { make in
+        view.addSubview(floatingTabBarView)
+        floatingTabBarView.snp.makeConstraints { make in
             make.bottom.equalToSuperview().inset(32)
             make.centerX.equalToSuperview()
         }
+    }
+}
+
+extension UINavigationController: FloatingTabBarItemProvider {
+    var floatingTabBarItem: UIImage {
+        get { rootController?.floatingTabBarItem ?? UIImage() }
+        set { rootController?.floatingTabBarItem = newValue }
+    }
+               
+    private var rootController: FloatingTabBarItemProvider? {
+        return viewControllers.first as? FloatingTabBarItemProvider
+    }
+}
+
+extension UIViewController {
+    var floatingTabBarController: FloatingTabBarController? {
+        findParent(type: FloatingTabBarController.self)
     }
 }
