@@ -19,6 +19,7 @@
 		E175C76329DAB2DA002CE349 /* FloatingTabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E175C76229DAB2DA002CE349 /* FloatingTabBarView.swift */; };
 		E175C76529DAB8CC002CE349 /* FloatingTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E175C76429DAB8CC002CE349 /* FloatingTabBarController.swift */; };
 		E175C76929DAE541002CE349 /* UINavigationController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = E175C76829DAE541002CE349 /* UINavigationController+Ext.swift */; };
+		E175C76B29DAE6D9002CE349 /* TableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E175C76A29DAE6D9002CE349 /* TableCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		E175C76229DAB2DA002CE349 /* FloatingTabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingTabBarView.swift; sourceTree = "<group>"; };
 		E175C76429DAB8CC002CE349 /* FloatingTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingTabBarController.swift; sourceTree = "<group>"; };
 		E175C76829DAE541002CE349 /* UINavigationController+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+Ext.swift"; sourceTree = "<group>"; };
+		E175C76A29DAE6D9002CE349 /* TableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +120,7 @@
 				E175C74429DA9BEB002CE349 /* ViewController.swift */,
 				E175C74629DA9BEB002CE349 /* LaunchScreen.storyboard */,
 				E175C76029DAA0F9002CE349 /* TableController.swift */,
+				E175C76A29DAE6D9002CE349 /* TableCell.swift */,
 				E175C76629DABE7B002CE349 /* FloatingTabBarController */,
 			);
 			path = UI;
@@ -229,6 +232,7 @@
 			files = (
 				E175C76129DAA0F9002CE349 /* TableController.swift in Sources */,
 				E175C76929DAE541002CE349 /* UINavigationController+Ext.swift in Sources */,
+				E175C76B29DAE6D9002CE349 /* TableCell.swift in Sources */,
 				E175C76529DAB8CC002CE349 /* FloatingTabBarController.swift in Sources */,
 				E175C74E29DA9BEB002CE349 /* AppDelegate.swift in Sources */,
 				E175C74B29DA9BEB002CE349 /* ViewController.swift in Sources */,

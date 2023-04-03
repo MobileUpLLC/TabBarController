@@ -2,7 +2,7 @@ import UIKit
 
 open class TabBarController: UIViewController {
     public var selectedIndex: Int = 0 {
-        willSet { selectedIndexWillchange() }
+        willSet { selectedIndexWillChange() }
         didSet { selectedIndexDidChange() }
     }
     
@@ -30,7 +30,7 @@ open class TabBarController: UIViewController {
         tabBarView.isHidden = isHidden
     }
     
-    open func selectedIndexWillchange() {
+    open func selectedIndexWillChange() {
         let controller = controllers[selectedIndex]
         
         controller.willMove(toParent: nil)

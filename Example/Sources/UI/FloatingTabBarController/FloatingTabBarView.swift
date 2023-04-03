@@ -12,9 +12,7 @@ class FloatingTabBarView: ItemsStackView<UIImage, UIImageView> {
     var onItemSelect: Closure.Int?
     
     var selectedIndex: Int = 0 {
-        didSet {
-            updateSelection()
-        }
+        didSet { indexDidChange() }
     }
     
     override func layoutSubviews() {
@@ -48,7 +46,7 @@ class FloatingTabBarView: ItemsStackView<UIImage, UIImageView> {
         }
         
         backgroundColor = .darkGray
-        updateSelection()
+        indexDidChange()
     }
     
     required init?(coder: NSCoder) {
@@ -59,7 +57,7 @@ class FloatingTabBarView: ItemsStackView<UIImage, UIImageView> {
         fatalError("init(fromCodeWithFrame:) has not been implemented")
     }
     
-    private func updateSelection() {
+    private func indexDidChange() {
         innerStack.arrangedSubviews.enumerated().forEach { (index, view) in
             view.tintColor = (index == selectedIndex) ? .white : .lightGray
         }
