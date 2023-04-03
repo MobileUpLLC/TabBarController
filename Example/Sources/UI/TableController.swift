@@ -12,7 +12,7 @@ class TableController: UIViewController {
     lazy var tableView = UITableView()
     var dataSource: UITableViewDiffableDataSource<Int, Int>!
     
-    let items = (0..<100).map { Int($0) }
+    let items = (0..<30).map { Int($0) }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,10 +54,12 @@ class TableCell: UITableViewCell {
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
+       
+        contentView.backgroundColor = .lightGray.withAlphaComponent(0.2)
         
         contentView.addSubview(label)
         label.snp.makeConstraints { make in
-            make.edges.equalToSuperview()
+            make.edges.equalToSuperview().inset(8)
         }
     }
     
