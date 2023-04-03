@@ -13,13 +13,8 @@ protocol FloatingTabBarItemProvider: UIViewController {
 }
 
 class FloatingTabBarController: TabBarController {
-    override var controllers: [UIViewController] {
-        tabControllers
-    }
-    
-    override var tabBarView: UIView {
-        floatingTabBarView
-    }
+    override var controllers: [UIViewController] { tabControllers }
+    override var tabBarView: UIView { floatingTabBarView }
     
     private lazy var floatingTabBarView: FloatingTabBarView = {
         let icons = tabControllers.map { $0.floatingTabBarItem }
@@ -32,12 +27,6 @@ class FloatingTabBarController: TabBarController {
     }()
     
     private let tabControllers: [FloatingTabBarItemProvider]
-   
-    init(controllers: [FloatingTabBarItemProvider]) {
-        self.tabControllers = controllers
-        
-        super.init(nibName: nil, bundle: nil)
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -60,16 +49,11 @@ class FloatingTabBarController: TabBarController {
             make.centerX.equalToSuperview()
         }
     }
-}
-
-extension UINavigationController: FloatingTabBarItemProvider {
-    var floatingTabBarItem: UIImage {
-        get { rootController?.floatingTabBarItem ?? UIImage() }
-        set { rootController?.floatingTabBarItem = newValue }
-    }
-               
-    private var rootController: FloatingTabBarItemProvider? {
-        return viewControllers.first as? FloatingTabBarItemProvider
+   
+    init(controllers: [FloatingTabBarItemProvider]) {
+        self.tabControllers = controllers
+        
+        super.init(nibName: nil, bundle: nil)
     }
 }
 

@@ -2,12 +2,8 @@ import UIKit
 
 open class TabBarController: UIViewController {
     public var selectedIndex: Int = 0 {
-        willSet {
-            selectedIndexWillchange()
-        }
-        didSet {
-            selectedIndexDidChange()
-        }
+        willSet { selectedIndexWillchange() }
+        didSet { selectedIndexDidChange() }
     }
     
     open var controllers: [UIViewController] { [] }
@@ -28,9 +24,7 @@ open class TabBarController: UIViewController {
         selectedIndexDidChange()
     }
     
-    open func setupTabBarView() {
-        
-    }
+    open func setupTabBarView() { }
     
     open func setTabBarViewVisibility(isHidden: Bool, isAnimated: Bool) {
         tabBarView.isHidden = isHidden
