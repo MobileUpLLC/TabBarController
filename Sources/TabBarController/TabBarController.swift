@@ -14,25 +14,51 @@ public protocol TabBarView {
 }
 
 open class TabBarController: UIViewController {
-    
-    var selectedIndex: Int = 0 {
+    public var selectedIndex: Int = 0 {
+        willSet {
+            selectedIndexWillchange()
+        }
         didSet {
-            
+            selectedIndexDidChange()
         }
     }
     
-    public private(set) var controllers: [UIViewController]
+    open var controllers: [UIViewController] { [] }
     
-    public init(controllers: [UIViewController]) {
-        self.controllers = controllers
-        
-        super.init(nibName: nil, bundle: nil)
+    public override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
     }
     
-    required public init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+    @available(*, unavailable) required public init?(coder: NSCoder) {
+        super.init(coder: coder)
+    }
+    
+    open override func viewDidLoad() {
+        super.viewDidLoad()
+       
+        setupTabBarView()
+        
+        selectedIndexDidChange()
     }
     
     open func setupTabBarView() {
+        
+    }
+    
+    open func selectedIndexWillchange() {
+        let controller = controllers[selectedIndex]
+        
+        controller.willMove(toParent: nil)
+        controller.view.removeFromSuperview()
+        controller.removeFromParent()
+    }
+    
+    open func selectedIndexDidChange() {
+        let controller = controllers[selectedIndex]
+        
+        addChild(controller)
+        view.insertSubview(controller.view, at: 0)
+        controller.view.frame = view.bounds
+        controller.didMove(toParent: self)
     }
 }

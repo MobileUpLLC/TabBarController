@@ -8,7 +8,9 @@
 import UIKit
 import SnapKit
 
-class TableController: UIViewController {
+class TableController: UIViewController, FloatingTabBarItemProvider {
+    var floatingTabBarItem: UIImage = UIImage()
+    
     lazy var tableView = UITableView()
     var dataSource: UITableViewDiffableDataSource<Int, Int>!
     
