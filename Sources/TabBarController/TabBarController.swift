@@ -1,6 +1,5 @@
-public struct TabBarController {
-    public private(set) var text = "Hello, World!"
+import UIKit
 
-    public init() {
-    }
+open class TabBarController: UIViewController {
+    
 }

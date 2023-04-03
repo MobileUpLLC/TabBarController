@@ -13,7 +13,6 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         let t = TabBarController()
-        print(t.text)
         
         view.backgroundColor = .red
     }
