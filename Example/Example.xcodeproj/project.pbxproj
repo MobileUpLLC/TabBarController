@@ -12,6 +12,7 @@
 		E175C74D29DA9BEB002CE349 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E175C74629DA9BEB002CE349 /* LaunchScreen.storyboard */; };
 		E175C74E29DA9BEB002CE349 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E175C74829DA9BEB002CE349 /* AppDelegate.swift */; };
 		E175C75029DA9BEB002CE349 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E175C74A29DA9BEB002CE349 /* SceneDelegate.swift */; };
+		E175C75529DA9D39002CE349 /* TabBarController in Frameworks */ = {isa = PBXBuildFile; productRef = E175C75429DA9D39002CE349 /* TabBarController */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		E175C74829DA9BEB002CE349 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E175C74929DA9BEB002CE349 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E175C74A29DA9BEB002CE349 /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		E175C75229DA9D28002CE349 /* TabBarController */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = TabBarController; path = ..; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +31,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E175C75529DA9D39002CE349 /* TabBarController in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -38,8 +41,10 @@
 		E175C72329DA9A04002CE349 = {
 			isa = PBXGroup;
 			children = (
+				E175C75129DA9D28002CE349 /* Packages */,
 				E175C74329DA9BEB002CE349 /* Sources */,
 				E175C72D29DA9A04002CE349 /* Products */,
+				E175C75329DA9D39002CE349 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -64,6 +69,21 @@
 			path = Sources;
 			sourceTree = "<group>";
 		};
+		E175C75129DA9D28002CE349 /* Packages */ = {
+			isa = PBXGroup;
+			children = (
+				E175C75229DA9D28002CE349 /* TabBarController */,
+			);
+			name = Packages;
+			sourceTree = "<group>";
+		};
+		E175C75329DA9D39002CE349 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -80,6 +100,9 @@
 			dependencies = (
 			);
 			name = Example;
+			packageProductDependencies = (
+				E175C75429DA9D39002CE349 /* TabBarController */,
+			);
 			productName = Example;
 			productReference = E175C72C29DA9A04002CE349 /* Example.app */;
 			productType = "com.apple.product-type.application";
@@ -344,6 +367,13 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		E175C75429DA9D39002CE349 /* TabBarController */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = TabBarController;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = E175C72429DA9A04002CE349 /* Project object */;
 }
