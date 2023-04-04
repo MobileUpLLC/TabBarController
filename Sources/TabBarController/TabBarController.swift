@@ -1,3 +1,10 @@
+//
+//  TabBarController.swift
+//
+//
+//  Created by Nikolai Timonin on 03.04.2023.
+//
+
 import UIKit
 
 open class TabBarController: UIViewController {

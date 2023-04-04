@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		E175C74B29DA9BEB002CE349 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E175C74429DA9BEB002CE349 /* ViewController.swift */; };
 		E175C74C29DA9BEB002CE349 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E175C74529DA9BEB002CE349 /* Assets.xcassets */; };
 		E175C74D29DA9BEB002CE349 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E175C74629DA9BEB002CE349 /* LaunchScreen.storyboard */; };
 		E175C74E29DA9BEB002CE349 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E175C74829DA9BEB002CE349 /* AppDelegate.swift */; };
@@ -24,7 +23,6 @@
 
 /* Begin PBXFileReference section */
 		E175C72C29DA9A04002CE349 /* Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		E175C74429DA9BEB002CE349 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		E175C74529DA9BEB002CE349 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E175C74729DA9BEB002CE349 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E175C74829DA9BEB002CE349 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -117,10 +115,8 @@
 		E175C75829DA9E81002CE349 /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				E175C74429DA9BEB002CE349 /* ViewController.swift */,
-				E175C74629DA9BEB002CE349 /* LaunchScreen.storyboard */,
-				E175C76029DAA0F9002CE349 /* TableController.swift */,
-				E175C76A29DAE6D9002CE349 /* TableCell.swift */,
+				E19DB35329DC2F8C007D6AF4 /* Launch */,
+				E19DB35229DC2F81007D6AF4 /* TableController */,
 				E175C76629DABE7B002CE349 /* FloatingTabBarController */,
 			);
 			path = UI;
@@ -149,6 +145,23 @@
 				E175C76829DAE541002CE349 /* UINavigationController+Ext.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		E19DB35229DC2F81007D6AF4 /* TableController */ = {
+			isa = PBXGroup;
+			children = (
+				E175C76029DAA0F9002CE349 /* TableController.swift */,
+				E175C76A29DAE6D9002CE349 /* TableCell.swift */,
+			);
+			path = TableController;
+			sourceTree = "<group>";
+		};
+		E19DB35329DC2F8C007D6AF4 /* Launch */ = {
+			isa = PBXGroup;
+			children = (
+				E175C74629DA9BEB002CE349 /* LaunchScreen.storyboard */,
+			);
+			path = Launch;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -235,7 +248,6 @@
 				E175C76B29DAE6D9002CE349 /* TableCell.swift in Sources */,
 				E175C76529DAB8CC002CE349 /* FloatingTabBarController.swift in Sources */,
 				E175C74E29DA9BEB002CE349 /* AppDelegate.swift in Sources */,
-				E175C74B29DA9BEB002CE349 /* ViewController.swift in Sources */,
 				E175C75029DA9BEB002CE349 /* SceneDelegate.swift in Sources */,
 				E175C76329DAB2DA002CE349 /* FloatingTabBarView.swift in Sources */,
 			);

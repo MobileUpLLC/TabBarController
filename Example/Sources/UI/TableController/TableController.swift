@@ -13,7 +13,7 @@ class TableController: UIViewController, FloatingTabBarItemProvider {
     var floatingTabBarItem: UIImage = UIImage()
     
     private lazy var tableView = UITableView()
-    private var dataSource: UITableViewDiffableDataSource<Int, Int>!
+    private var dataSource: UITableViewDiffableDataSource<Int, Int>?
     private let items = (0..<30).map { Int($0) }
     
     override func viewDidLoad() {
@@ -39,7 +39,7 @@ class TableController: UIViewController, FloatingTabBarItemProvider {
         snapshot.appendSections([0])
         snapshot.appendItems(items)
         
-        dataSource.apply(snapshot)
+        dataSource?.apply(snapshot)
     }
     
     private func setupTable() {
