@@ -45,7 +45,7 @@ class FloatingTabBarView: ItemsStackView<UIImage, UIImageView> {
             view.addGestureRecognizer(tapGesture)
         }
         
-        backgroundColor = .darkGray
+        backgroundColor = .darkGray.withAlphaComponent(0.8)
         indexDidChange()
     }
     
