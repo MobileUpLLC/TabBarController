@@ -10,7 +10,7 @@ import SnapKit
 
 class TableController: UIViewController, FloatingTabBarItemProvider {
     var item: Int = 0
-    var floatingTabBarItem: UIImage = UIImage()
+    var floatingTabBarItem = UIImage()
     
     private lazy var tableView = UITableView()
     private var dataSource: UITableViewDiffableDataSource<Int, Int>?
@@ -30,7 +30,7 @@ class TableController: UIViewController, FloatingTabBarItemProvider {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        let isHidden = item % 2 == 0
+        let isHidden = item.isMultiple(of: 2)
         floatingTabBarController?.setTabBarViewVisibility(isHidden: isHidden, isAnimated: true)
     }
     
@@ -48,9 +48,9 @@ class TableController: UIViewController, FloatingTabBarItemProvider {
         
         dataSource = UITableViewDiffableDataSource<Int, Int>(
             tableView: tableView,
-            cellProvider: { (table, indexPath, item) in
-                let cell = table.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! TableCell
-                cell.label.text = "\(item)"
+            cellProvider: { table, indexPath, item in
+                let cell = table.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as? TableCell
+                cell?.label.text = "\(item)"
                 
                 return cell
             }

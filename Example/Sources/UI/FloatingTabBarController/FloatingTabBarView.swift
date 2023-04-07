@@ -58,7 +58,7 @@ class FloatingTabBarView: ItemsStackView<UIImage, UIImageView> {
     }
     
     private func indexDidChange() {
-        innerStack.arrangedSubviews.enumerated().forEach { (index, view) in
+        innerStack.arrangedSubviews.enumerated().forEach { index, view in
             view.tintColor = (index == selectedIndex) ? .white : .lightGray
         }
     }
