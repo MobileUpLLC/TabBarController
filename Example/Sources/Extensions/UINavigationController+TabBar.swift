@@ -9,8 +9,7 @@ import UIKit
 
 extension UINavigationController: FloatingTabBarItemProvider {
     var floatingTabBarItem: UIImage {
-        get { rootController?.floatingTabBarItem ?? UIImage() }
-        set { rootController?.floatingTabBarItem = newValue }
+        rootController?.floatingTabBarItem ?? UIImage()
     }
 
     private var rootController: FloatingTabBarItemProvider? {

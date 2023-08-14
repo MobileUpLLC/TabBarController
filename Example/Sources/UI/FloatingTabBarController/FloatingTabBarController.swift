@@ -9,7 +9,7 @@ import TabBarController
 import UIKit
 
 protocol FloatingTabBarItemProvider: UIViewController {
-    var floatingTabBarItem: UIImage { get set }
+    var floatingTabBarItem: UIImage { get }
 }
 
 class FloatingTabBarController: TabBarController {
@@ -32,6 +32,7 @@ class FloatingTabBarController: TabBarController {
         super.viewDidLoad()
 
         view.backgroundColor = .white
+        layoutViews()
     }
 
     override func selectedIndexDidChange() {
@@ -40,9 +41,7 @@ class FloatingTabBarController: TabBarController {
         floatingTabBarView.selectedIndex = selectedIndex
     }
 
-    override func setupTabBarView() {
-        super.setupTabBarView()
-
+    private func layoutViews() {
         view.addSubview(floatingTabBarView)
         floatingTabBarView.snp.makeConstraints { make in
             make.bottom.equalToSuperview().inset(32)

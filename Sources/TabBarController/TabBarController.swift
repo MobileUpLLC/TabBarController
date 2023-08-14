@@ -27,13 +27,10 @@ open class TabBarController: UIViewController {
     open override func viewDidLoad() {
         super.viewDidLoad()
        
-        setupTabBarView()
         selectedIndexDidChange()
     }
     
-    open func setupTabBarView() { }
-    
-    open func setTabBarViewVisibility(isHidden: Bool, isAnimated: Bool) {
+    open func setTabBarViewVisibility(isHidden: Bool) {
         tabBarView.isHidden = isHidden
     }
     

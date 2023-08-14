@@ -22,18 +22,13 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window = UIWindow(windowScene: windowScene)
 
         let lhs = TableController()
-        if let floatingTabBarItem = UIImage(systemName: "square.and.arrow.up") {
-            lhs.floatingTabBarItem = floatingTabBarItem
-        }
-
-        lhs.item = -13
+        lhs.floatingTabBarItem = UIImage(systemName: "basketball.fill") ?? UIImage()
+        lhs.title = "Left Root"
         let lhsNav = UINavigationController(rootViewController: lhs)
 
         let rhs = TableController()
-        if let floatingTabBarItem = UIImage(systemName: "square.and.arrow.up.circle") {
-            rhs.floatingTabBarItem = floatingTabBarItem
-        }
-        rhs.item = -111
+        rhs.floatingTabBarItem = UIImage(systemName: "volleyball.fill") ?? UIImage()
+        rhs.title = "Right Root"
         let rhsNav = UINavigationController(rootViewController: rhs)
 
         window?.rootViewController = FloatingTabBarController(controllers: [lhsNav, rhsNav])
