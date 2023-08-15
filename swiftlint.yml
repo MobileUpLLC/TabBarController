@@ -3,8 +3,10 @@ disabled_rules:
   - colon
   - type_body_length
   - notification_center_detachment
+  - generic_type_name
 
 opt_in_rules:
+  - anyobject_protocol
   - array_init
   - block_based_kvo
   - class_delegate_protocol
@@ -18,7 +20,6 @@ opt_in_rules:
   - contains_over_filter_is_empty
   - contains_over_first_not_nil
   - contains_over_range_nil_comparison
-  - convenience_type
   - compiler_protocol_init
   - custom_rules
   - discouraged_optional_boolean
@@ -29,6 +30,7 @@ opt_in_rules:
   - empty_string
   - empty_xctest_method
   - explicit_init
+  - explicit_self
   - fallthrough
   - fatal_error_message
   - first_where
@@ -58,7 +60,6 @@ opt_in_rules:
   - private_outlet
   - prefer_zero_over_explicit_init
   - prohibited_super_call
-  - prohibited_interface_builder
   - quick_discouraged_call
   - quick_discouraged_focused_test
   - quick_discouraged_pending_test
@@ -72,22 +73,20 @@ opt_in_rules:
   - strong_iboutlet
   - toggle_bool
   - unneeded_parentheses_in_closure_argument
+  - unused_declaration
+  - unused_import
   - vertical_parameter_alignment_on_call
   - vertical_whitespace_closing_braces
   - xct_specific_matcher
   - vertical_whitespace_opening_braces
 
-analyzer_rules:
-  - explicit_self
-  - unused_declaration
-  - unused_import
-
-included:
-  - Sources
-
 excluded:
   - Carthage
   - Pods
+  - Source/UI/Extensions/UIImage+extension_icons.swift
+  - Source/UI/Extensions/UIImage+extension_illustrations.swift
+  - Source/UI/Extensions/UIColor+extension.swift
+  - Source/UI/Extensions/UIFont+extension.swift
   - Source/Resources/R.generated.swift
 
 force_cast: warning
@@ -106,7 +105,7 @@ file_length:
 
 closure_body_length:
   warning: 100
-  error: 200
+  error: 100
 
 type_name:
   min_length: 1
@@ -115,24 +114,24 @@ type_name:
 identifier_name:
   min_length: 1
   max_length: 40
-
+  
 large_tuple:
   warning: 3
   error: 5
-
+  
 function_parameter_count:
   warning: 8
   error: 10
-
+  
 cyclomatic_complexity:
   warning: 8
   error: 20
-
+  
 nesting:
   type_level:
     warning: 4
     error: 8
 
-warning_threshold: 20
+warning_threshold: 50
 
 reporter: "xcode"
