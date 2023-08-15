@@ -4,13 +4,13 @@
     <a href="https://developer.apple.com/swift">
         <img src="https://img.shields.io/badge/language-Swift_5-green" alt="Swift5" />
     </a>
-    <a href="https://gitlab.com/mobileup/mobileup/development-ios/test-projects/formview" >
+    <a href="https://github.com/MobileUpLLC/TabBarController" >
         <img src="https://img.shields.io/badge/iOS-15.0+-orange?style=flat"/>
     </a>
-    <a href="https://gitlab.com/mobileup/mobileup/development-ios/test-projects/formview" >
+    <a href="https://github.com/MobileUpLLC/TabBarController" >
         <img src="https://img.shields.io/badge/SPM-compatible-orange?style=flat"/>
     </a>
-    <a href="https://github.com/MobileUpLLC/Utils/blob/main/LICENSE">
+    <a href="https://github.com/MobileUpLLC/TabBarController/blob/main/LICENSE">
         <img src="https://img.shields.io/badge/license-MIT-green" alt="License: MIT" />
     </a>
 </div>
@@ -21,6 +21,7 @@ Fully customizable tabbar controller.
 ## Features
 * Cusom tabbar view. No limitations.
 * Standart `UIViewController` lifecycle for child controllers.
+* Preserve child controllers across selection.
 * Hide/Show tabbar view.
 * Cocoa-like API. UIKit support.
 
@@ -113,4 +114,4 @@ dependencies: [
 ```
 
 ## License
-TabBarController is destributed under the [MIT license](https://github.com/MobileUpLLC/FormView/blob/main/LICENSE).
+TabBarController is destributed under the [MIT license](https://github.com/MobileUpLLC/TabBarController/blob/main/LICENSE).
