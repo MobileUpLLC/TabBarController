@@ -9,7 +9,6 @@ import UIKit
 import SnapKit
 
 class TableController: UIViewController, FloatingTabBarItemProvider {
-    var item: Int = 0
     var floatingTabBarItem = UIImage()
 
     private lazy var tableView = UITableView()
@@ -19,19 +18,10 @@ class TableController: UIViewController, FloatingTabBarItemProvider {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        title = "\(item)"
-
         layoutViews()
         setupTable()
         setupNavigationBar()
         setItems()
-    }
-
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-
-        let isHidden = item.isMultiple(of: 2)
-        floatingTabBarController?.setTabBarViewVisibility(isHidden: isHidden, isAnimated: true)
     }
 
     private func setItems() {
@@ -45,6 +35,7 @@ class TableController: UIViewController, FloatingTabBarItemProvider {
     private func setupTable() {
         tableView.register(TableCell.self, forCellReuseIdentifier: "Cell")
         tableView.delegate = self
+        tableView.contentInset.bottom = 70
 
         dataSource = UITableViewDiffableDataSource<Int, Int>(
             tableView: tableView,
@@ -65,8 +56,9 @@ class TableController: UIViewController, FloatingTabBarItemProvider {
     }
 
     private func setupNavigationBar() {
+        let isTabBarHidden = floatingTabBarController?.tabBarView.isHidden ?? false
         navigationItem.rightBarButtonItem = UIBarButtonItem(
-            title: "HS",
+            title: isTabBarHidden ? "Show" : "Hide",
             style: .plain,
             target: self,
             action: #selector(rightNavBarButtonTapped)
@@ -75,14 +67,15 @@ class TableController: UIViewController, FloatingTabBarItemProvider {
 
     @objc private func rightNavBarButtonTapped() {
         let isHidden = floatingTabBarController?.tabBarView.isHidden ?? false
-        floatingTabBarController?.setTabBarViewVisibility(isHidden: !isHidden, isAnimated: true)
+        floatingTabBarController?.setTabBarViewVisibility(isHidden: !isHidden)
+        setupNavigationBar()
     }
 }
 
 extension TableController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let controller = TableController()
-        controller.item = items[indexPath.row]
+        controller.title = "\(items[indexPath.row])"
 
         navigationController?.pushViewController(controller, animated: true)
     }

@@ -17,7 +17,7 @@
 		E175C76129DAA0F9002CE349 /* TableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E175C76029DAA0F9002CE349 /* TableController.swift */; };
 		E175C76329DAB2DA002CE349 /* FloatingTabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E175C76229DAB2DA002CE349 /* FloatingTabBarView.swift */; };
 		E175C76529DAB8CC002CE349 /* FloatingTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E175C76429DAB8CC002CE349 /* FloatingTabBarController.swift */; };
-		E175C76929DAE541002CE349 /* UINavigationController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = E175C76829DAE541002CE349 /* UINavigationController+Ext.swift */; };
+		E175C76929DAE541002CE349 /* UINavigationController+TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = E175C76829DAE541002CE349 /* UINavigationController+TabBar.swift */; };
 		E175C76B29DAE6D9002CE349 /* TableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E175C76A29DAE6D9002CE349 /* TableCell.swift */; };
 /* End PBXBuildFile section */
 
@@ -32,7 +32,7 @@
 		E175C76029DAA0F9002CE349 /* TableController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableController.swift; sourceTree = "<group>"; };
 		E175C76229DAB2DA002CE349 /* FloatingTabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingTabBarView.swift; sourceTree = "<group>"; };
 		E175C76429DAB8CC002CE349 /* FloatingTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingTabBarController.swift; sourceTree = "<group>"; };
-		E175C76829DAE541002CE349 /* UINavigationController+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+Ext.swift"; sourceTree = "<group>"; };
+		E175C76829DAE541002CE349 /* UINavigationController+TabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+TabBar.swift"; sourceTree = "<group>"; };
 		E175C76A29DAE6D9002CE349 /* TableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -142,7 +142,7 @@
 		E175C76729DAE532002CE349 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				E175C76829DAE541002CE349 /* UINavigationController+Ext.swift */,
+				E175C76829DAE541002CE349 /* UINavigationController+TabBar.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -257,7 +257,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "export PATH=\"$PATH:/opt/homebrew/bin\"\n\nif which swiftlint >/dev/null; then\n      swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+			shellScript = "export PATH=\"$PATH:/opt/homebrew/bin\"\n\nif which swiftlint >/dev/null; then\n  swiftlint --path .. --config ../swiftlint.yml\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -267,7 +267,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E175C76129DAA0F9002CE349 /* TableController.swift in Sources */,
-				E175C76929DAE541002CE349 /* UINavigationController+Ext.swift in Sources */,
+				E175C76929DAE541002CE349 /* UINavigationController+TabBar.swift in Sources */,
 				E175C76B29DAE6D9002CE349 /* TableCell.swift in Sources */,
 				E175C76529DAB8CC002CE349 /* FloatingTabBarController.swift in Sources */,
 				E175C74E29DA9BEB002CE349 /* AppDelegate.swift in Sources */,
@@ -488,16 +488,16 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
 			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 5.0.0;
+				kind = exactVersion;
+				version = 5.6.0;
 			};
 		};
 		E175C75D29DAA0CF002CE349 /* XCRemoteSwiftPackageReference "Utils" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/MobileUpLLC/Utils";
 			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 0.0.9;
+				kind = exactVersion;
+				version = 0.3.1;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
